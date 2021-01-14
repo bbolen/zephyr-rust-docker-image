@@ -1,0 +1,7 @@
+This docker image uses the upstream zephyr docker image as a base.  It adds
+the rust compiler.  It also transforms some of the compiler libraries (libc,
+libstdc++, libgcc_eh) to rename some of the sections to allow building images
+where code is split between spi and ram.
+
+To build this image:
+sudo docker build --build-arg UID=$(id -u) --build-arg GID=$(id -g) -t docker-zephyr-rust-builder:v<tag> .
