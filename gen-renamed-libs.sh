@@ -46,8 +46,8 @@ rm -f _udivsi3.o _dvmd_tls.o _aeabi_uldivmod.o _udivmoddi4.o _aeabi_ldivmod.o
 # sections used by zephyr back to their original names.  Those sections
 # will end up in SRAM since they are used by zephyr.  The sections
 # prefixed with .app will reside on spi flash.
-lib_path=`${CC} -print-file-name=libc.a`
-lib_renamed=${B}/`basename ${lib_path} .a`_renamed.a
+lib_path=`${CC} -print-file-name=libc_nano.a`
+lib_renamed=${B}/libc_renamed.a
 ${OBJCOPY} --prefix-alloc-sections=.app ${lib_path} ${lib_renamed}
 
 CLIBS="lib_a-strlen.o lib_a-strcmp.o lib_a-memcpy.o" #lib_a-impure.o
