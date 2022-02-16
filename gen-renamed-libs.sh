@@ -60,7 +60,7 @@ ${AR} r ${lib_renamed} ${CLIBS}
 rm -f ${CLIBS}
 
 rm -f ${B}/libc_section_renames
-ram_sections="memcmp memcpy memset memmove strncmp strncpy strnlen strcmp strlen strstr strchr strtol _strtol strtoul _strtoul_l _ctype_ __ascii_mbtowc __ascii_wctomb _setlocale abort atoi __get_current_locale __get_global_locale"
+ram_sections="memcmp memcpy memset memmove strncmp strncpy strnlen strcmp strlen strstr strchr strtol _strtol strtoul _strtoul_l _ctype_ __ascii_mbtowc __ascii_wctomb _setlocale abort atoi __get_current_locale __get_global_locale  __memset_chk __chk_fail"
 for section in ${ram_sections}; do
     ${READELF} -SW ${lib_renamed} \
         | grep -e "\[[ ]*[0-9][0-9]*\] \.app\.text\.$section" \
