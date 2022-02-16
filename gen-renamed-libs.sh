@@ -1,7 +1,7 @@
 #!/bin/bash
 
 B=${HOME}/lib_renamed
-CROSS_COMPILE=/opt/toolchains/zephyr-sdk-0.11.4/arm-zephyr-eabi/bin/arm-zephyr-eabi-
+CROSS_COMPILE=/opt/toolchains/zephyr-sdk-0.11.2/arm-zephyr-eabi/bin/arm-zephyr-eabi-
 AR=${CROSS_COMPILE}ar
 CC="${CROSS_COMPILE}gcc -mfloat-abi=hard -mcpu=cortex-r4f -mfpu=vfpv3-d16"
 OBJCOPY=${CROSS_COMPILE}objcopy

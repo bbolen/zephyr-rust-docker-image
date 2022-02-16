@@ -1,4 +1,4 @@
-FROM zephyrprojectrtos/zephyr-build:latest
+FROM zephyrprojectrtos/zephyr-build:v0.13.1
 
 RUN sudo apt update
 RUN sudo apt install -y curl openssh-client less xxd
